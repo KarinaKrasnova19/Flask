@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>404 - Страница не найдена</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>404 - Страница не найдена</h1>
+        <p>Похоже, вы заблудились. <a href="{{ url_for('show_cars') }}">Вернуться к списку автомобилей</a></p>
+    </div>
+</body>
+</html>

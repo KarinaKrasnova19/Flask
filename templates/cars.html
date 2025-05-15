@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список автомобилей</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Список автомобилей</h1>
+        <a href="{{ url_for('new_car') }}"><button>Добавить автомобиль</button></a>
+        <a href="{{ url_for('logout') }}"><button>Выйти</button></a>
+        <ol>
+            {% for car in cars %}
+                <li>{{ car.brand }} {{ car.model }} ({{ car.year }}) - {{ car.price }} руб.</li>
+                <a href="{{ url_for('edit_car', car_id=car.id) }}">Изменить</a>
+                <a href="{{ url_for('delete_car', car_id=car.id) }}" style="margin-left: 10px;">Удалить</a>
+                <br><br>
+            {% endfor %}
+        </ol>
+    </div>
+</body>
+</html>
